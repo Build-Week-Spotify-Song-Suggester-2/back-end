@@ -5,10 +5,10 @@ const restricted = require('../auth/auth-middleware')
 
 router.use(restricted)
 
-router.get('/', (req, res) => {
-    Users.find()
-    .then(users => {
-        res.status(200).json(users)
+router.get('/songs', (req, res) => {
+    Users.findSongsByUserId(req.jwt.sub)
+    .then(songs => {
+        res.status(200).json(songs)
     })
     .catch(err => {
         res.send(err)

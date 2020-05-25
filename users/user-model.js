@@ -4,7 +4,8 @@ module.exports = {
     find,
     findBy,
     findById,
-    add
+    add,
+    findSongsByUserId
 }
 
 function find(){
@@ -25,5 +26,19 @@ async function add(user) {
         return findById(id)
     } catch(error) {
         throw error
+    }
+}
+
+async function findSongsByUserId(id) {
+    try {console.log(findSongsByUserId)
+    const data = await db.select('*')
+    .from('users_songs')
+    .join('songs', 'songs.id', '=', 'users_songs.song_id')
+    .join('users', 'users.id', '=', 'users_songs.user_id')
+    .where('users.id', id)
+    return data
+    } catch(error) {
+        console.log(error)
+        throw(error)
     }
 }

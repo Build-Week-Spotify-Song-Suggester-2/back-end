@@ -3,9 +3,11 @@ const router = require('express').Router()
 const Songs = require('./song-model')
 const restricted = require('../auth/auth-middleware')
 
+
 router.use(restricted)
 
 router.get('/', (req, res) => {
+    console.log(req.jwt)
     Songs.find()
     .then(songs => {
         res.status(200).json(songs)
@@ -34,12 +36,12 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     const songInfo = req.body
 
-    Songs.add(songInfo)
+    Songs.add(songInfo, req.jwt.sub)
     .then(song => {
         res.status(201).json(song)
     })
     .catch(err => {
-        res.status(500).json({message: 'Failed to add song'})
+        res.status(500).json({message: 'Failed to add song', err})
     })
 })
 

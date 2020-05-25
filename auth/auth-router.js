@@ -50,6 +50,7 @@ function createToken(user){
         sub: user.id,
         username: user.username,
         password: user.password
+
     }
     const secret = process.env.JWT_SECRET || '2canKeepAsecretIf1ofThemIsDead'
     const options = {
