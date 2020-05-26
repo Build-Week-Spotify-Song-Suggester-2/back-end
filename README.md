@@ -36,3 +36,12 @@ This web application was made to suggest songs based on your previous song prefe
 
 
 
+
+
+what i want to do:
+
+[ ] - add functionality to songs route to add songs to database 
+[ ] - change route end point for user's songs to /api/users/songs
+[ ] - supply documentation
+[ ] - finish testing end points
+[ ] - deploy backend
