@@ -42,6 +42,7 @@ what i want to do:
 
 [ ] - add functionality to songs route to add songs to database 
 [ ] - change route end point for user's songs to /api/users/songs
+[ ] - provide album art for songs database
 [ ] - supply documentation
-[ ] - finish testing end points
+[ ] - finish testing on end points
 [ ] - deploy backend
