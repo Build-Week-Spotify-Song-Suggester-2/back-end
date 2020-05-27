@@ -21,6 +21,7 @@ exports.up = function(knex) {
         .notNullable()
         songs.string('artist', 128)
         .notNullable()
+        songs.string('album_art', 255)
     })
     .createTable('users_songs', us => {
         us.increments()

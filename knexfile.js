@@ -1,4 +1,8 @@
-
+const pgConnection = process.env.NEW_DATABASE_URL || {
+  database: "dummy", //postgres by default
+  user: "dummy", //postgres by default
+  password: "dummy", //blank by default
+};
 
 module.exports = {
 
@@ -37,7 +41,7 @@ module.exports = {
 
   production: {
     client: 'pg',
-    connection: process.env.DATABASE_URL,
+    connection: process.env.NEW_DATABASE_URL,
     pool: {
     min: 2,
     max: 10

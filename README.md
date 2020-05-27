@@ -9,6 +9,7 @@ This web application was made to suggest songs based on your previous song prefe
 ## Register New User
 
 - Register as a new user with : 
+https://spotify-song-suggester-bw.herokuapp.com/api/auth/register
 
 | to register | required |
 | ----------- | -------- |
@@ -21,6 +22,7 @@ This web application was made to suggest songs based on your previous song prefe
 ## Login as an authenticated user
 
 - Login as a registered user  and become authenticated :
+https://spotify-song-suggester-bw.herokuapp.com/api/auth/login
 
 | to login | required |
 | -------- | -------- |
@@ -32,6 +34,24 @@ This web application was made to suggest songs based on your previous song prefe
 ## Get a list of all songs
 
 - view a list of current songs in the database when logged in as an authenticated user:
+https://spotify-song-suggester-bw.herokuapp.com/api/songs
+
+## Add songs to the database
+
+- add additional songs to the database when logged in as an authenticated user:
+https://spotify-song-suggester-bw.herokuapp.com/api/songs
+
+## Update songs on the database
+
+- you can update the songs in the database when logged in as an authenticated user:
+https://spotify-song-suggester-bw.herokuapp.com/api/songs/:id
+
+## Delete songs on the database
+
+- You can delete songs on the dtatbase when logged in as an authenticated user:
+https://spotify-song-suggester-bw.herokuapp.com/api/songs/:id
+
+
 
 
 
@@ -43,6 +63,6 @@ what i want to do:
 [ ] - add functionality to songs route to add songs to database 
 [ ] - change route end point for user's songs to /api/users/songs
 [ ] - provide album art for songs database
-[ ] - supply documentation
+[x] - supply documentation
 [ ] - finish testing on end points
-[ ] - deploy backend
+[x] - deploy backend
