@@ -14,16 +14,39 @@ it("should return 404 for bad url", async () => {
 
  describe("server.js", () => {
     describe("register", () => {
-      it("should fail to register user", async () => {
+      it("register tester user", async () => {
         const user = {
           "username": "test2",
-          "password": "testvalues"
+          "password": "testvalues",
+          "first_name": "tester",
+          "last_name": "testing",
+          "email": "email@email.com"
         };
-        const expectedStatusCode = 500;
+        const expectedStatusCode = 201;
         const response = await request(server)
           .post("/api/auth/register")
           .send(user);
         expect(response.status).toEqual(expectedStatusCode);
       })
     })
+})
+
+test('login tester user', async () => {
+  const register = await request(server)
+  .post('/api/auth/register')
+  .send({
+    "username": "test2",
+    "password": "testvalues",
+    "first_name": "tester",
+    "last_name": "testing",
+    "email": "email@email.com"
+  })
+  const login = await request(server)
+  .post('/api/auth/login')
+  .send({
+    "username": "test2",
+    "password": "testvalues"
+  })
+  expect(login.status).toBe(200)
+
 })
