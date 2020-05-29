@@ -58,11 +58,3 @@ https://spotify-song-suggester-bw.herokuapp.com/api/songs/:id
 
 
 
-what i want to do:
-
-[ ] - add functionality to songs route to add songs to database 
-[ ] - change route end point for user's songs to /api/users/songs
-[ ] - provide album art for songs database
-[x] - supply documentation
-[ ] - finish testing on end points
-[x] - deploy backend
